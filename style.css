@@ -1,0 +1,12 @@
+#wrapper-canvas {
+    pointer-events: none;
+    z-index: 0;
+}
+
+#wrapper-canvas canvas {
+    max-width: 100%;
+    pointer-events: auto;
+    touch-action: pan-y;
+    position: relative;
+    z-index: 0;
+}
