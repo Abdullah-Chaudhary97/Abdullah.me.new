@@ -42,9 +42,9 @@ function runMatter() {
     },
   });
 
-  // create runner with slower timing
+  // create runner with optimized timing
   var runner = Runner.create();
-  runner.delta = 1000 / 30; // 30 FPS instead of default 60 FPS
+  runner.delta = 1000 / 45; // 45 FPS for smoother animation
 
   // Runner.run(runner, engine);
   // Render.run(render);
@@ -70,8 +70,8 @@ function runMatter() {
         attractors: [
           function (bodyA, bodyB) {
             return {
-              x: (bodyA.position.x - bodyB.position.x) * 5e-7,
-              y: (bodyA.position.y - bodyB.position.y) * 5e-7,
+              x: (bodyA.position.x - bodyB.position.x) * 8e-7,
+              y: (bodyA.position.y - bodyB.position.y) * 8e-7,
             };
           },
         ],
@@ -170,8 +170,8 @@ function runMatter() {
     if (!mouse.position.x) return;
     // smoothly move the attractor body towards the mouse
     Body.translate(attractiveBody, {
-      x: (mouse.position.x - attractiveBody.position.x) * 0.06,
-      y: (mouse.position.y - attractiveBody.position.y) * 0.06,
+      x: (mouse.position.x - attractiveBody.position.x) * 0.12,
+      y: (mouse.position.y - attractiveBody.position.y) * 0.12,
     });
   });
 
